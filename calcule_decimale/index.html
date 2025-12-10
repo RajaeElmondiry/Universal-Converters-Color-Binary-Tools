@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converters - Color & Binary</title>
+  <link rel="icon" href="favicon-32x32.png" type="image/png" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔧 Universal Converters</h1>
+      <p class="subtitle">Convert between different color and number representations</p>
+    </header>
+
+    <div class="converters-grid">
+      <!-- Color Converter -->
+      <div class="converter-card" id="colorConverter">
+        <h2><span class="converter-icon">🎨</span> Color Converter</h2>
+        
+        <div class="input-group">
+          <input type="text" id="hexInput" placeholder="#FF5733 or F53 or rgb(255, 87, 51)" maxlength="30">
+          <button onclick="convertirCouleur()" style="background: linear-gradient(135deg, #3498db, #2980b9);">Convert</button>
+        </div>
+
+        <div class="button-group">
+          <button onclick="genererAleatoire()">🎲 Generate Random</button>
+          <button onclick="copierHex()">📋 Copy HEX</button>
+        </div>
+
+        <div id="colorError" class="error"></div>
+
+        <div id="colorBox"></div>
+
+        <div class="result-box">
+          <h3>Conversion Results</h3>
+          <div class="result-item">
+            <span class="result-label">Hexadecimal:</span>
+            <span class="result-value" id="hexValue">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Decimal (R, G, B):</span>
+            <span class="result-value" id="rgbValue">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Binary (8 bits):</span>
+            <span class="result-value" id="binValue">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decimal/Binary Converter -->
+      <div class="converter-card" id="binaryConverter">
+        <h2><span class="converter-icon">🔢</span> Decimal → Binary Converter</h2>
+        
+        <div class="input-group">
+          <input type="number" id="decimalInput" placeholder="Enter a number (ex: 42)" min="0">
+          <button onclick="convertirDecimal()" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">Convert</button>
+        </div>
+
+        <div class="button-group">
+          <button onclick="genererDecimalAleatoire()">🎲 Random Number</button>
+          <button onclick="effacerDecimal()">🗑️ Clear</button>
+        </div>
+
+        <div id="binaryError" class="error"></div>
+
+        <div class="result-box">
+          <h3>Conversion Result</h3>
+          <div class="result-item">
+            <span class="result-label">Decimal:</span>
+            <span class="result-value" id="decimalValue">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Binary:</span>
+            <span class="result-value" id="binaryResult">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Bits used:</span>
+            <span class="result-value" id="bitCount">—</span>
+          </div>
+        </div>
+
+        <div class="explanation" id="binaryExplanation" style="display: none;">
+          <h3>📝 How it works:</h3>
+          <div class="explanation-content" id="binarySteps"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Converters created with HTML, CSS and JavaScript • Refresh the page to start over</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
